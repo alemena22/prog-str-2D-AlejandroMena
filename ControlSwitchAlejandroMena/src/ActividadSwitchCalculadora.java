@@ -9,27 +9,41 @@ public class ActividadSwitchCalculadora{
         System.out.println("4. DIVIDIR");
         System.out.println("Selecciona una opcion: ");
         int opc = scanner.nextInt();
-        System.out.println("Ingresa el primer numero: ");
-        double variable1 = scanner.nextDouble();
-        System.out.println("Ingresa el segundo numero: ");
-        double variable2 = scanner.nextDouble();
+        double variable1, variable2;
+
         switch (opc){
             case 1:
+                System.out.println("Ingresa el primer numero: ");
+                variable1 = scanner.nextDouble();
+                System.out.println("Ingresa el segundo numero: ");
+                variable2 = scanner.nextDouble();
                 System.out.println("La operacion seleccionada es: SUMA");
                 System.out.println("El primer numero ingresado es: " + variable1 + " y el segundo numero ingresado es: " + variable2);
                 System.out.println("EL resultado de la suma es: " + calcularSuma(variable1, variable2));
                 break;
             case 2:
+                System.out.println("Ingresa el primer numero: ");
+                variable1 = scanner.nextDouble();
+                System.out.println("Ingresa el segundo numero: ");
+                variable2 = scanner.nextDouble();
                 System.out.println("La operacion seleccionada es: RESTA");
                 System.out.println("El primer numero ingresado es: " + variable1 + " y el segundo numero ingresado es: " + variable2);
                 System.out.println("EL resultado de la resta es: " + calcularResta(variable1, variable2));
                 break;
             case 3:
+                System.out.println("Ingresa el primer numero: ");
+                variable1 = scanner.nextDouble();
+                System.out.println("Ingresa el segundo numero: ");
+                variable2 = scanner.nextDouble();
                 System.out.println("La operacion seleccionada es: MULTIPLICACION");
                 System.out.println("El primer numero ingresado es: " + variable1 + " y el segundo numero ingresado es: " + variable2);
                 System.out.println("EL resultado de la multiplicacion es: " + calcularMultiplicacion(variable1, variable2));
                 break;
             case 4:
+                System.out.println("Ingresa el primer numero: ");
+                variable1 = scanner.nextDouble();
+                System.out.println("Ingresa el segundo numero: ");
+                variable2 = scanner.nextDouble();
                 if(variable2 == 0){
                     System.out.println("No se puede dividir entre 0");
 
@@ -40,7 +54,8 @@ public class ActividadSwitchCalculadora{
                 }
                 break;
             default:
-                System.out.println("Opcion no valida!");
+                System.out.println("Opcion invalida!");
+                return;
 
          }
 
