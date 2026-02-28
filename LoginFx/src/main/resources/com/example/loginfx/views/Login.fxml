@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox spacing="12" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.loginfx.controllers.LoginController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <padding>
+        <Insets top = "20" left="20" right="20" bottom="20"/>
+    </padding>
+
+    <Label text="PANTALLA DE LOGIN"/>
+    <Label text="CORREO: "/>
+    <TextField fx:id="txtCORREO" promptText="INGRESA TU CORREO"/>
+    <Label text="CONTRASENA: "/>
+    <PasswordField fx:id="txtCONTRASENA" promptText="INGRESA LA CONTRASENA"/>
+
+    <Button text="INICIAR SESION " onAction="#onGoToLogin"/>
+    <Label fx:id="lblRESULTADO"/>
+
+</VBox>
