@@ -16,20 +16,25 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Label text="Nombre" />
-                <Label text="Email" GridPane.rowIndex="1" />
-                <TextField fx:id="txtName" GridPane.columnIndex="1" />
-                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label text="Edad" GridPane.rowIndex="2" />
-                <TextField fx:id="txtAge" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Nombre" GridPane.rowIndex="1" />
+                <Label text="Email" GridPane.rowIndex="2" />
+                <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Edad" GridPane.rowIndex="3" />
+                <TextField fx:id="txtAge" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtBusqueda" GridPane.columnIndex="1" />
+                <Label text="Busqueda" />
             </children>
         </GridPane>
         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-                <Button mnemonicParsing="false" text="Recargar Datos" />
+                <Button mnemonicParsing="false" onAction="#onReload" text="Recargar Datos" />
                 <Button mnemonicParsing="false" onAction="#onAddPerson" text="Agregar" />
+                <Button mnemonicParsing="false" onAction="#onUpdate" text="Actualizar" />
+                <Button mnemonicParsing="false" onAction="#onDelete" text="Eliminar" />
             </children>
         </HBox>
         <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />

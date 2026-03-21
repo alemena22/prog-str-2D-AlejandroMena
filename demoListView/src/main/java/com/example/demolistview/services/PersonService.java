@@ -10,6 +10,7 @@ public class PersonService {
     private PersonFileRepository repo = new PersonFileRepository();
 
     public List<String> loadDataforList() throws IOException {
+
         List<String> lines = repo.readAllLines();
         List<String> result = new ArrayList<>();
         for(String line : lines){
@@ -25,13 +26,50 @@ public class PersonService {
         return result;
 
     }
-    public void addPerson(String name, String email, int age) throws IOException {
-        validatePerson(name, email, age);
-        String nameNoComa = name.replace(",","");
-        String emailNoComa = email.replace(",","");
-        repo.appendNewLine(nameNoComa+","+emailNoComa+","+age);
+    public void addPerson(String name, String email, String age) throws IOException {
+        if (age == null || !age.matches("\\d+")) {
+            throw new IllegalArgumentException("La edad debe ser un número válido");
+        }
+
+        int ageInt = Integer.parseInt(age);
+
+        validatePerson(name, email, ageInt);
+
+        String nameNoComa = name.replace(",", "");
+        String emailNoComa = email.replace(",", "");
+        String ageNoComa = age.replace(",", "");
+
+        repo.appendNewLine(nameNoComa + "," + emailNoComa + "," + ageNoComa);
 
     }
+    public void updatePerson(int index, String name, String email, String edad) throws IOException {
+        List<String> lines = getAllCleanLines();
+        if(index == -1){
+            throw new IllegalArgumentException("El indice recibido es invalido");
+        }
+        lines.set(index, name + "," + email + "," + edad);
+        repo.appendAllLine(lines);
+
+    }
+    public void deletePerson(int index) throws IOException {
+        List<String> lines = getAllCleanLines();
+        lines.remove(index);
+        repo.appendAllLine(lines);
+
+    }
+    private List<String> getAllCleanLines() throws IOException {
+        List<String> lines = repo.readAllLines();
+        List<String> cleanLines = new ArrayList<>();
+        for(String line : lines){
+            if(line != null && !line.isBlank()){
+                cleanLines.add(line);
+
+            }
+
+        }
+        return cleanLines;
+    }
+
 
     private void validatePerson(String name, String email, int age){
         if(name == null || name.isBlank() || name.length() < 3){
