@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="556.0" prefWidth="526.0"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.practicaexamen.controllers.AppController">
+
+    <children>
+
+        <Label text="CONTACTOS" />
+
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+
+            <children>
+
+                <Label text="NOMBRE" />
+                <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+
+                <Label text="TELEFONO" GridPane.rowIndex="1" />
+                <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="PARENTESCO" GridPane.rowIndex="2" />
+                <ComboBox fx:id="cbParentesco" prefWidth="150.0"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            </children>
+        </GridPane>
+
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10">
+            <children>
+
+                <Button text="AGREGAR" onAction="#onAgregar" />
+                <Button text="BUSCAR" onAction="#onBuscar" />
+                <Button text="ACTUALIZAR" onAction="#onActualizar" />
+                <Button text="ELIMINAR" onAction="#onEliminar" />
+                <Button text="LIMPIAR" onAction="#onLimpiar" />
+
+            </children>
+        </HBox>
+
+        <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+        <Label fx:id="lblMsg" />
+    </children>
+</VBox>
+
+
